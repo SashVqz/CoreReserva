@@ -1,0 +1,108 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "clientId": 1733406745419,
+      "status": "completed",
+      "totalPrice": 56.68,
+      "totalPriceWithIVA": 68.58,
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Vino Tinto Reserva",
+          "quantity": 2,
+          "productPrice": 20.99,
+          "discount": 10,
+          "subtotal": 37.78
+        },
+        {
+          "productId": 2,
+          "productName": "Cava Brut Nature",
+          "quantity": 2,
+          "productPrice": 15.5,
+          "discount": 0,
+          "subtotal": 31
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "clientId": 1733406765927,
+      "status": "completed",
+      "totalPrice": 41.98,
+      "totalPriceWithIVA": 50.8,
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Vino Tinto Reserva",
+          "quantity": 2,
+          "productPrice": 20.99,
+          "discount": 0,
+          "subtotal": 41.98
+        }
+      ]
+    },
+    {
+      "id": 1733506287702,
+      "clientId": "1733406745419",
+      "status": "completed",
+      "totalPrice": "20.99",
+      "totalPriceWithIVA": "25.40",
+      "details": [
+        {
+          "productId": "1",
+          "productName": "Vino Tinto Reserva",
+          "quantity": 1,
+          "productPrice": 20.99,
+          "subtotal": "20.99"
+        }
+      ]
+    },
+    {
+      "id": 1733506979446,
+      "clientId": "1733406745419",
+      "status": "completed",
+      "totalPrice": "298.38",
+      "totalPriceWithIVA": "361.04",
+      "details": [
+        {
+          "productId": "1",
+          "productName": "Vino Tinto Reserva",
+          "quantity": 12,
+          "productPrice": 20.99,
+          "subtotal": "251.88"
+        },
+        {
+          "productId": "2",
+          "productName": "Cava Brut Nature",
+          "quantity": 3,
+          "productPrice": 15.5,
+          "subtotal": "46.50"
+        }
+      ]
+    },
+    {
+      "id": 1733509414842,
+      "clientId": "1733406745419",
+      "status": "completed",
+      "totalPrice": "36.49",
+      "totalPriceWithIVA": "44.15",
+      "details": [
+        {
+          "productId": "2",
+          "productName": "Cava Brut Nature",
+          "quantity": 1,
+          "productPrice": 15.5,
+          "subtotal": "15.50"
+        },
+        {
+          "productId": "1",
+          "productName": "Vino Tinto Reserva",
+          "quantity": 1,
+          "productPrice": 20.99,
+          "subtotal": "20.99"
+        }
+      ]
+    }
+  ]
+}

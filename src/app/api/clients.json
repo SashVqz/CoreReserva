@@ -1,0 +1,26 @@
+{
+  "clients": [
+    {
+      "id": 1733406745419,
+      "type": "empresa",
+      "NIF_CIF": "B12345678",
+      "name": "Empresa S.L.",
+      "surname": "",
+      "address": "Calle Falsa 123, Madrid",
+      "deliveryAddress": "Calle Verdadera 456, Madrid",
+      "phone": "912345678",
+      "volumeDiscount": 10
+    },
+    {
+      "id": 1733406765927,
+      "type": "particular",
+      "NIF_CIF": "12345678A",
+      "name": "Juan",
+      "surname": "Pérez",
+      "address": "Calle Secundaria 789, Barcelona",
+      "deliveryAddress": "Calle Tercera 101, Barcelona",
+      "phone": "623456789",
+      "volumeDiscount": 0
+    }
+  ]
+}
