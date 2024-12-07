@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavbarHome";
 
 export default function UsersPage() {
   const [users, setUsers] = useState([]);

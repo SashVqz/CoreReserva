@@ -1,0 +1,40 @@
+{
+  "materiaPrima": [
+    {
+      "id": 1,
+      "fechaEntrada": "2024-12-01",
+      "cantidadKilos": 500,
+      "origen": "Viñedos del Sol",
+      "descripcion": "Uvas frescas recolectadas a mano.",
+      "detalle": {
+        "gradoMadurez": "Óptimo",
+        "tipoUva": "Tempranillo",
+        "calidad": 10
+      }
+    },
+    {
+      "id": 2,
+      "fechaEntrada": "2024-12-05",
+      "cantidadKilos": 300,
+      "origen": "Viñedos del Norte",
+      "descripcion": "Uvas ligeramente maduras.",
+      "detalle": {
+        "gradoMadurez": "Medio",
+        "tipoUva": "Cabernet Sauvignon",
+        "calidad": 7
+      }
+    },
+    {
+      "id": 3,
+      "fechaEntrada": "2024-12-07",
+      "cantidadKilos": 200,
+      "origen": "Viñedos del Este",
+      "descripcion": "Uvas con alta acidez, ideales para vino blanco.",
+      "detalle": {
+        "gradoMadurez": "Bajo",
+        "tipoUva": "Chardonnay",
+        "calidad": 8
+      }
+    }
+  ]
+}
