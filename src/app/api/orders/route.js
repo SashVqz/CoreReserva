@@ -34,16 +34,16 @@ export async function POST(req) {
     const clientsData = await readJSON(clientsPath);
     const productsData = await readJSON(productsPath);
 
-    // Convertir ambos valores a cadenas para garantizar coincidencia
-    const client = clientsData.clients.find((c) => String(c.id) === String(body.clientId));
+    const clientId = Number(body.clientId);
+
+    const client = clientsData.clients.find((c) => c.id === clientId);
     if (!client) {
-      console.error(`Cliente con ID ${body.clientId} no encontrado`);
+      console.error(`Cliente con ID ${clientId} no encontrado`);
       return NextResponse.json({ error: 'Cliente no encontrado' }, { status: 404 });
     }
 
-    console.log(`Cliente encontrado: ${client.name}`);
+    console.log(`Cliente encontrado: ${client.name}, Descuento de volumen: ${client.volumeDiscount}%`);
 
-    // Validar productos enviados
     const orderDetails = body.products.map((product) => {
       const catalogProduct = productsData.products.find((p) => String(p.id) === String(product.productId));
       if (!catalogProduct) {
@@ -64,17 +64,22 @@ export async function POST(req) {
       };
     });
 
-    // Calcular totales
     const totalPrice = orderDetails.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
-    const totalPriceWithIVA = totalPrice * 1.21; // IVA del 21%
 
-    console.log(`Total sin IVA: ${totalPrice}, Total con IVA: ${totalPriceWithIVA}`);
+    const discount = (client.volumeDiscount / 100) * totalPrice;
+    const totalPriceAfterDiscount = totalPrice - discount;
+
+    const totalPriceWithIVA = totalPriceAfterDiscount * 1.21; // IVA del 21%
+
+    console.log(`Total sin descuento: ${totalPrice}, Descuento: ${discount}, Total con descuento: ${totalPriceAfterDiscount}, Total con IVA: ${totalPriceWithIVA}`);
 
     const newOrder = {
       id: Date.now(),
-      clientId: body.clientId,
+      clientId: clientId,
       status: 'pending',
       totalPrice: totalPrice.toFixed(2),
+      discount: discount.toFixed(2),
+      totalPriceAfterDiscount: totalPriceAfterDiscount.toFixed(2),
       totalPriceWithIVA: totalPriceWithIVA.toFixed(2),
       details: orderDetails,
     };

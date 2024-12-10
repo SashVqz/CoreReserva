@@ -6,6 +6,13 @@
       "email": "asd",
       "password": "asd",
       "role": "admin"
+    },
+    {
+      "id": 1733824626793,
+      "name": "Carmen",
+      "email": "carmen@u-tad.com",
+      "password": "carmen",
+      "role": "user"
     }
   ]
 }

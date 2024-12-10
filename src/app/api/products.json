@@ -15,6 +15,54 @@
       "price": 15.5,
       "format": "750ml",
       "harvest": "2020"
+    },
+    {
+      "id": 3,
+      "name": "Vino Blanco Joven",
+      "description": "Un vino blanco fresco y ligero, perfecto para aperitivos.",
+      "price": 12.6,
+      "format": "750ml",
+      "harvest": "2022"
+    },
+    {
+      "id": 4,
+      "name": "Vino Rosado Especial",
+      "description": "Vino rosado con un toque floral y afrutado.",
+      "price": 14.99,
+      "format": "750ml",
+      "harvest": "2021"
+    },
+    {
+      "id": 5,
+      "name": "Pack de Cava",
+      "description": "Pack de 6 botellas de cava brut, excelente relación calidad-precio.",
+      "price": 149.99,
+      "format": "750ml (pack de 6)",
+      "harvest": "2020"
+    },
+    {
+      "id": 6,
+      "name": "Vino Tinto Gran Reserva",
+      "description": "Un vino tinto de larga crianza con gran cuerpo y carácter.",
+      "price": 18.9,
+      "format": "700ml",
+      "harvest": "2019"
+    },
+    {
+      "id": 7,
+      "name": "Cava Brut Rosé",
+      "description": "Cava rosado con burbujas finas y aroma delicado.",
+      "price": 13.5,
+      "format": "750ml",
+      "harvest": "2021"
+    },
+    {
+      "id": 8,
+      "name": "Vino Blanco Reserva",
+      "description": "Vino blanco de gran calidad con notas de roble.",
+      "price": 12.91,
+      "format": "750ml",
+      "harvest": "2020"
     }
   ]
 }

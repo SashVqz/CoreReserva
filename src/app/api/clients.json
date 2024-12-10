@@ -21,6 +21,61 @@
       "deliveryAddress": "Calle Tercera 101, Barcelona",
       "phone": "623456789",
       "volumeDiscount": 0
+    },
+    {
+      "id": 1733406781234,
+      "type": "empresa",
+      "NIF_CIF": "B98765432",
+      "name": "Tech Solutions S.A.",
+      "surname": "",
+      "address": "Avenida Digital 34, Valencia",
+      "deliveryAddress": "Parque Empresarial 67, Valencia",
+      "phone": "961234567",
+      "volumeDiscount": 15
+    },
+    {
+      "id": 1733406795678,
+      "type": "particular",
+      "NIF_CIF": "87654321B",
+      "name": "María",
+      "surname": "González",
+      "address": "Plaza Mayor 12, Sevilla",
+      "deliveryAddress": "Calle Comercio 45, Sevilla",
+      "phone": "654321987",
+      "volumeDiscount": 0
+    },
+    {
+      "id": 1733406801239,
+      "type": "empresa",
+      "NIF_CIF": "B11223344",
+      "name": "Construcciones López",
+      "surname": "",
+      "address": "Calle Obra 58, Bilbao",
+      "deliveryAddress": "Polígono Norte 33, Bilbao",
+      "phone": "944567890",
+      "volumeDiscount": 20
+    },
+    {
+      "id": 1733406812345,
+      "type": "particular",
+      "NIF_CIF": "45678901C",
+      "name": "Luis",
+      "surname": "Martínez",
+      "address": "Avenida Sol 10, Málaga",
+      "deliveryAddress": "Calle Luna 22, Málaga",
+      "phone": "678901234",
+      "volumeDiscount": 0
+    },
+    {
+      "id": 1733406823456,
+      "type": "empresa",
+      "NIF_CIF": "B55667788",
+      "name": "Distribuciones Europa",
+      "surname": "",
+      "address": "Camino Central 80, Zaragoza",
+      "deliveryAddress": "Polígono Industrial 5, Zaragoza",
+      "phone": "976543210",
+      "volumeDiscount": 12
     }
   ]
 }

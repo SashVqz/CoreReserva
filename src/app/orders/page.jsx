@@ -110,26 +110,12 @@ export default function OrdersPage() {
   };
 
   const createInvoice = (order) => {
-    if (!order) {
-      console.error("Error: La orden no está definida");
-      alert("Error: No se pudo generar la factura porque la orden no está disponible.");
-      return;
-    }
-  
-    const client = clients.find((c) => c.id === order.clientId) || { name: "Cliente desconocido" };
-  
-    console.log("Datos de la orden:", order);
-    console.log("Datos del cliente:", client);
-  
-    const doc = new jsPDF();
-  
     try {
-      doc.setFontSize(16);
-      doc.text("Factura", 10, 10);
-      doc.setFontSize(12);
-      doc.text(`Cliente: ${client.name}`, 10, 20);
-      doc.text(`ID Cliente: ${order.clientId}`, 10, 30);
-      doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 10, 40);
+      if (!order) {
+        console.error("Error: La orden no está definida");
+        alert("Error: No se pudo generar la factura porque la orden no está disponible.");
+        return;
+      }
   
       if (!order.details || order.details.length === 0) {
         console.error("Error: La orden no tiene detalles de productos.");
@@ -137,42 +123,71 @@ export default function OrdersPage() {
         return;
       }
   
+      const client = clients.find((c) => c.id === order.clientId) || { name: "Cliente desconocido" };
+  
+      console.log("Datos de la orden:", order);
+      console.log("Datos del cliente:", client);
+  
+      const doc = new jsPDF();
+  
+      doc.setFontSize(16);
+      doc.text("Factura", 10, 10);
+      doc.setFontSize(12);
+      doc.text(`Cliente: ${client.name}`, 10, 20);
+      doc.text(`ID Cliente: ${order.clientId}`, 10, 30);
+      doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 10, 40);
+  
       let yPosition = 50;
       doc.text("Productos:", 10, yPosition);
-  
       yPosition += 10;
+  
       doc.setFontSize(10);
       doc.text("Cant.", 10, yPosition);
       doc.text("Producto", 30, yPosition);
       doc.text("Precio", 100, yPosition);
-      doc.text("Desc.", 130, yPosition);
       doc.text("Subtotal", 160, yPosition);
-  
       yPosition += 5;
   
-      order.details.forEach((item, index) => {
-        if (!item.productName || !item.productPrice || !item.quantity) {
-          console.error("Producto con datos incompletos:", item);
+      order.details.forEach((item) => {
+        if (!item.productName || typeof item.productPrice !== "number" || typeof item.quantity !== "number") {
+          console.error("Producto con datos incompletos o inválidos:", item);
           return;
         }
+  
+        if (yPosition > 270) {
+          doc.addPage();
+          yPosition = 10;
+        }
+  
         doc.text(`${item.quantity}`, 10, yPosition);
         doc.text(item.productName, 30, yPosition);
         doc.text(`$${item.productPrice.toFixed(2)}`, 100, yPosition);
-        doc.text(`${item.discount || 0}%`, 130, yPosition);
-        doc.text(`$${item.subtotal.toFixed(2)}`, 160, yPosition);
+        doc.text(`$${parseFloat(item.subtotal).toFixed(2)}`, 160, yPosition);
         yPosition += 10;
       });
   
       yPosition += 10;
-      doc.setFontSize(12);
-      doc.text(`Total: $${order.totalPrice.toFixed(2)}`, 10, yPosition);
-      yPosition += 10;
-      doc.text(`Total con IVA: $${order.totalPriceWithIVA.toFixed(2)}`, 10, yPosition);
   
-      doc.save(`Factura_${order.id}.pdf`);
+      if (typeof parseFloat(order.totalPrice) !== "number" || typeof parseFloat(order.totalPriceWithIVA) !== "number") {
+        console.error("Error: Los totales de la orden no son válidos.", order);
+        alert("Error: No se puede generar la factura debido a totales inválidos.");
+        return;
+      }
+  
+      doc.setFontSize(12);
+      doc.text(`Total sin descuento: $${parseFloat(order.totalPrice).toFixed(2)}`, 10, yPosition);
+      yPosition += 10;
+      doc.text(`Descuento aplicado: $${parseFloat(order.discount).toFixed(2)}`, 10, yPosition);
+      yPosition += 10;
+      doc.text(`Total después del descuento: $${parseFloat(order.totalPriceAfterDiscount).toFixed(2)}`, 10, yPosition);
+      yPosition += 10;
+      doc.text(`Total con IVA: $${parseFloat(order.totalPriceWithIVA).toFixed(2)}`, 10, yPosition);
+  
+      doc.save(`Factura_${order.id || "sin_id"}.pdf`);
       alert("Factura creada y guardada en la carpeta de descargas.");
+  
     } catch (error) {
-      console.error("Error al generar la factura:", error);
+      console.error("Error al generar la factura:", error.message, error.stack);
       alert("Hubo un error al generar la factura.");
     }
   };

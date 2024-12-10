@@ -47,13 +47,6 @@ export default function Navbar() {
             >
               Productos
             </button>
-            
-            <button
-              className="hover:underline"
-              onClick={() => router.push("/materiaPrima")}
-            >
-              Materia Prima
-            </button>
 
             <button
               className="hover:underline"
