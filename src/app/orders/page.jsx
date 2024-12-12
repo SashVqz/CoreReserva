@@ -197,7 +197,7 @@ export default function OrdersPage() {
   return (<>
     <Navbar />
     <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Gestión de Órdenes</h1>
+      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Gestión de Pedidos</h1>
 
       <div className="flex justify-center gap-4 mb-8">
         {["pending", "completed", "canceled"].map((status) => (
@@ -222,7 +222,7 @@ export default function OrdersPage() {
           }`}
           onClick={() => setShowForm(!showForm)}
         >
-          {showForm ? "Cerrar Formulario" : "Crear Nueva Orden"}
+          {showForm ? "Cerrar Formulario" : "Crear Nueva Pedido"}
         </button>
 
         {showForm && (

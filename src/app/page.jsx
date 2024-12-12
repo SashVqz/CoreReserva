@@ -42,13 +42,11 @@ export default function Dashboard() {
             </p>
             {user.role === "admin" ? (
               <p className="mt-4 text-gray-700">
-                Tienes acceso al panel de administración y puedes gestionar todos
-                los módulos del sistema.
+                Tienes acceso al panel de administración.
               </p>
             ) : (
               <p className="mt-4 text-gray-700">
-                No tienes permisos administrativos, pero puedes gestionar tus
-                actividades asignadas.
+                No tienes permisos administrativos.
               </p>
             )}
           </div>
@@ -91,8 +89,8 @@ export default function Dashboard() {
                 className="bg-red-600 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-red-700 transition"
                 onClick={() => router.push("/orders")}
               >
-                <h2 className="text-2xl font-bold">Gestión de Ventas</h2>
-                <p className="mt-2 text-sm">Revisa y gestiona las órdenes de venta.</p>
+                <h2 className="text-2xl font-bold">Gestión de Pedidos</h2>
+                <p className="mt-2 text-sm">Revisa y gestiona las pedidos.</p>
               </div>
             </div>
           </div>

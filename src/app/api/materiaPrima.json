@@ -9,7 +9,7 @@
       "detalle": {
         "gradoMadurez": "Óptimo",
         "tipoUva": "Tempranillo",
-        "calidad": 10
+        "calidad": 5
       }
     },
     {
@@ -21,7 +21,7 @@
       "detalle": {
         "gradoMadurez": "Medio",
         "tipoUva": "Cabernet Sauvignon",
-        "calidad": 7
+        "calidad": 3
       }
     },
     {
@@ -33,7 +33,7 @@
       "detalle": {
         "gradoMadurez": "Bajo",
         "tipoUva": "Chardonnay",
-        "calidad": 8
+        "calidad": 4
       }
     },
     {
@@ -45,7 +45,7 @@
       "detalle": {
         "gradoMadurez": "Óptimo",
         "tipoUva": "Syrah",
-        "calidad": 9
+        "calidad": 4
       }
     },
     {
@@ -57,7 +57,7 @@
       "detalle": {
         "gradoMadurez": "Alto",
         "tipoUva": "Garnacha",
-        "calidad": 10
+        "calidad": 5
       }
     },
     {
@@ -69,19 +69,7 @@
       "detalle": {
         "gradoMadurez": "Medio",
         "tipoUva": "Verdejo",
-        "calidad": 8
-      }
-    },
-    {
-      "id": 7,
-      "fechaEntrada": "2024-12-12",
-      "cantidadKilos": 350,
-      "origen": "Viñedos del Valle",
-      "descripcion": "Uvas orgánicas sin pesticidas.",
-      "detalle": {
-        "gradoMadurez": "Óptimo",
-        "tipoUva": "Merlot",
-        "calidad": 2
+        "calidad": 4
       }
     }
   ]

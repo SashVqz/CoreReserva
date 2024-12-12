@@ -25,15 +25,6 @@ export default function Navbar() {
         </h1>
         {role !== undefined && role && (
           <div className="flex items-center space-x-4">
-            {role === "admin" && (
-              <button
-                className="hover:underline"
-                onClick={() => router.push("/users")}
-              >
-                Personal
-              </button>
-            )}
-
             <button
               className="hover:underline"
               onClick={() => router.push("/clients")}
@@ -52,7 +43,7 @@ export default function Navbar() {
               className="hover:underline"
               onClick={() => router.push("/orders")}
             >
-              Ventas
+              Pedidos
             </button>
             
             <button className="hover:underline" onClick={handleLogout}>
