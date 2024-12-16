@@ -10,9 +10,16 @@
     {
       "id": 1733824626793,
       "name": "Carmen",
-      "email": "carmen@u-tad.com",
-      "password": "carmen",
+      "email": "CarmenLasa@u-tad.com",
+      "password": "user",
       "role": "user"
+    },
+    {
+      "id": 1734367669776,
+      "name": "CarmenAdmin",
+      "email": "CarmenLasaAdmin@u-tad.com",
+      "password": "admin",
+      "role": "admin"
     }
   ]
 }
